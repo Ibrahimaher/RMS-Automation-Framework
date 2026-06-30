@@ -1,4 +1,4 @@
-package pages;
+package POSModule;
 
 public class invoices {
 }
