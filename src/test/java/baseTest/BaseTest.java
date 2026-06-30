@@ -10,11 +10,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import utiles.ElementUtils;
 
 
 public class BaseTest {
     WebDriver driver;
     private BrowserUtils browser;
+    private ElementUtils elementUtils;
     private DriverManager driverManager;
 
     // Before class: Initialize browser driver
@@ -36,6 +38,7 @@ public class BaseTest {
     @BeforeMethod
     public void SetupMethod() {
         browser = new BrowserUtils();
+        elementUtils = new ElementUtils();
         System.out.println("Setup method done TC01");
     }
 
