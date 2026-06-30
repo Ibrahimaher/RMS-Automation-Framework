@@ -15,7 +15,7 @@ public class LoginPage {
     }
 
     private final By usernameField = By.cssSelector("input[formcontrolname='username']");
-    private final By passwordField = By.cssSelector("p-password[formcontrolname='password']");
+    private final By passwordField = By.cssSelector("input[type='password']");
     private final By loginButton = By.cssSelector("button[type='submit']");
 
     public void enterUsername(String username) {
