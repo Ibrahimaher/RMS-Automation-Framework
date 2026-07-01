@@ -1,6 +1,7 @@
 package utiles;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
@@ -10,6 +11,7 @@ import java.time.Duration;
  * @author nancy
  */
 public class BrowserUtils extends DriverManager {
+
 
     //Navigate to the specified URL in the browser.
     public void navigateToURL(String url) {

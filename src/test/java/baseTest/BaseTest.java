@@ -2,6 +2,8 @@ package baseTest;
 
 import java.io.ByteArrayInputStream;
 
+import pages.CardsPage;
+import pages.LoginPage;
 import utiles.BrowserUtils;
 import utiles.DriverManager;
 import io.qameta.allure.Allure;
@@ -15,22 +17,25 @@ import utiles.ElementUtils;
 
 public class BaseTest {
     WebDriver driver;
-    private BrowserUtils browser;
-    private ElementUtils elementUtils;
-    private DriverManager driverManager;
+    protected LoginPage loginPage;
+    protected CardsPage cardsPage;
+    protected BrowserUtils browser;
+    protected ElementUtils elementUtils;
+    protected DriverManager driverManager;
 
     // Before class: Initialize browser driver
     @BeforeClass
     public void SetupClass() {
         driverManager = new DriverManager();
         driverManager.initializeBrowser();
+        driver = driverManager.getDriver();
         System.out.println("Setup done TC01");
     }
 
     // After class: Close browser
     @AfterClass
     public void TearDownClass() {
-        driverManager.closeBrowser();
+       // driverManager.closeBrowser();
         System.out.println("TearDown done TC01");
     }
 
@@ -38,6 +43,8 @@ public class BaseTest {
     @BeforeMethod
     public void SetupMethod() {
         browser = new BrowserUtils();
+       loginPage = new LoginPage(driver);
+       cardsPage = new CardsPage(driver);
         elementUtils = new ElementUtils();
         System.out.println("Setup method done TC01");
     }

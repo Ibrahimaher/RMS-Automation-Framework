@@ -14,10 +14,15 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    private final By Header = By.xpath("//h2[contains(text(),'Sign in')]");
     private final By usernameField = By.cssSelector("input[formcontrolname='username']");
     private final By passwordField = By.cssSelector("input[type='password']");
     private final By loginButton = By.cssSelector("button[type='submit']");
 
+    public String getHeaderText()
+    {
+        return elementUtils.getText(Header);
+    }
     public void enterUsername(String username) {
         elementUtils.sendKeys(usernameField, username);
     }
